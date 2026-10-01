@@ -1,0 +1,88 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import { Tag } from "@/components/tag";
+import type { Project } from "@/data/portfolio";
+import { cn } from "@/lib/utils";
+
+type ProjectCardProps = {
+  project: Project;
+  className?: string;
+  /** Compact for homepage; rich for /portfolio listing */
+  variant?: "compact" | "rich";
+};
+
+export function ProjectCard({
+  project,
+  className,
+  variant = "compact",
+}: ProjectCardProps) {
+  const isRich = variant === "rich";
+
+  return (
+    <Link
+      href={project.href}
+      aria-label={`Open case study: ${project.title}`}
+      className={cn(
+        "group flex flex-col justify-between rounded-lg border border-border bg-surface p-6 transition-colors hover:border-ink-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-bg lg:p-10",
+        isRich ? "min-h-[280px] gap-8 lg:min-h-[340px]" : "min-h-[196px] lg:min-h-[300px] lg:flex-row lg:items-end lg:justify-between",
+        className
+      )}
+    >
+      <div className="flex max-w-[500px] flex-col gap-4">
+        <div className="flex flex-wrap items-center gap-2">
+          {isRich ? (
+            <span className="font-mono text-tag text-accent">{project.number}</span>
+          ) : null}
+          {project.tags.map((tag) => (
+            <Tag key={tag}>{tag}</Tag>
+          ))}
+        </div>
+        <h3>
+          {project.title}
+        </h3>
+        {isRich ? (
+          <>
+            <p className="text-body text-ink-muted lg:text-body-lg">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-tag text-ink-muted uppercase lg:text-meta">
+              <span>
+                <span className="text-accent">Role</span> {project.role}
+              </span>
+              <span>
+                <span className="text-accent">Timeline</span> {project.timeline}
+              </span>
+            </div>
+          </>
+        ) : null}
+      </div>
+
+      <div
+        className={cn(
+          "flex items-center justify-between gap-4",
+          isRich ? "mt-auto" : "mt-8 lg:mt-0 lg:shrink-0"
+        )}
+      >
+        <span className="font-mono text-meta text-ink-muted uppercase lg:hidden">
+          View case study
+        </span>
+        {isRich ? (
+          <span className="hidden font-mono text-meta text-ink-muted uppercase lg:inline">
+            View case study
+          </span>
+        ) : null}
+        <span className="relative inline-flex size-11 items-center justify-center rounded-full bg-accent transition-opacity group-hover:opacity-90 lg:size-14">
+          <Image
+            src="/images/arrow-right.svg"
+            alt=""
+            width={20}
+            height={20}
+            className="size-5"
+            unoptimized
+          />
+        </span>
+      </div>
+    </Link>
+  );
+}

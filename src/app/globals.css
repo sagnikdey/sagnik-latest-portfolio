@@ -1,0 +1,167 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: var(--font-display-loaded), "Arial Narrow", Arial, sans-serif;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-linkedin: var(--linkedin);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Type scale — use these; never text-[Npx]. See skills.MD */
+  --text-tag: 1rem;
+  --text-tag--line-height: 1;
+  --text-meta: 0.75rem;
+  --text-meta--line-height: 1.4;
+  --text-link: 0.8125rem;
+  --text-link--line-height: 1.4;
+  --text-quote: 0.875rem;
+  --text-quote--line-height: 1.6;
+  --text-quote-lg: 1rem;
+  --text-quote-lg--line-height: 1.6;
+  --text-body: 1rem;
+  --text-body--line-height: 1.55;
+  --text-body-lg: 1.25rem;
+  --text-body-lg--line-height: 1.6;
+  --text-lede: 1.125rem;
+  --text-lede--line-height: 1.5;
+  --text-lede-lg: 1.5rem;
+  --text-lede-lg--line-height: 1.55;
+  --text-eyebrow: 0.875rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow-lg: 1.5rem;
+  --text-eyebrow-lg--line-height: 1.4;
+  --text-display-card: 1.75rem;
+  --text-display-card--line-height: 1;
+  --text-display-card-lg: 2.25rem;
+  --text-display-card-lg--line-height: 1;
+  --text-display-section: 2.75rem;
+  --text-display-section--line-height: 1;
+  --text-display-section-lg: 4rem;
+  --text-display-section-lg--line-height: 0.9;
+  --text-display-hero: 3.5rem;
+  --text-display-hero--line-height: 1.05;
+  --text-display-hero-lg: 5.25rem;
+  --text-display-hero-lg--line-height: 1.12;
+}
+
+:root {
+  --bg: #080808;
+  --surface: #111111;
+  --surface-raised: #1a1a1a;
+  --border: #2a2a2a;
+  --ink: #f5f0eb;
+  --ink-muted: #a09e9a;
+  --accent: #ff4500;
+  --linkedin: #0a66c2;
+
+  --background: var(--bg);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--accent);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface-raised);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface-raised);
+  --muted-foreground: var(--ink-muted);
+  --accent-foreground: #ffffff;
+  --destructive: oklch(0.577 0.245 27.325);
+  --input: var(--border);
+  --ring: var(--accent);
+  --radius: 0.5rem; /* 8px — default rounded-lg for all bordered surfaces */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+  }
+
+  /* Heading defaults → type scale (see skills.MD). Override with utilities when needed. */
+  h1 {
+    @apply font-display text-display-hero font-black uppercase text-ink lg:text-display-hero-lg;
+  }
+
+  h2 {
+    @apply font-display text-display-section font-bold text-ink lg:text-display-section-lg;
+  }
+
+  h3 {
+    @apply  text-display-card  text-ink lg:text-display-card-lg pb-6;
+  }
+
+  h4 {
+    @apply text-lede  text-ink lg:text-lede-lg pb-4;
+  }
+
+  /* Big Shoulders opsz: display optical size for headlines (was Big Shoulders Display) */
+  .font-display,
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 72;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--accent) 35%, transparent);
+    color: var(--ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
