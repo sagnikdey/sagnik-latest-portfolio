@@ -32,7 +32,7 @@ export const heroContent = {
 };
 
 export const portfolioPageContent = {
-  eyebrow: "Selected work",
+  eyebrow: "selected work",
   title: "portfolio",
   lede: "Case studies across enterprise MDM, pantry iOS product design, UX research, design systems, and healthcare platforms — from discovery through shipped experiences.",
 };
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     number: "01",
     title: "MDM Platform",
     description:
-      "Enterprise MDM for convenience-store vendors — live admin + vendor portal against shared Postgres, staging-and-approval architecture, paired journey maps, and a shipped Lamplight UI Kit — designed and built solo with AI collaboration.",
+      "Enterprise master data for convenience-store vendors — admin and vendor portals, staging-and-approval workflows, and a shipped design system, designed and built solo.",
     tags: ["MASTER DATA", "B2B PLATFORM", "DESIGN SYSTEM", "AI-ASSISTED BUILD"],
     href: "/work/mdm",
     role: "Product Designer & Design-Engineer",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     number: "02",
     title: "Vesta",
     description:
-      "Pantry intelligence for iOS — voice logging, barcode, and receipt parsing designed through Empathize → Test as a solo Design Thinking build, with pivots that kept the core friction-removal bet intact.",
+      "A pantry intelligence iOS app — voice, barcode, and receipt logging designed through Design Thinking as a solo build, keeping inventory accurate without manual entry.",
     tags: ["iOS", "DESIGN THINKING", "VOICE UX", "SOLO BUILD"],
     href: "/work/vesta",
     role: "Product Designer & Solo Builder",
@@ -87,45 +87,45 @@ export const projects: Project[] = [
     number: "03",
     title: "QuickStop iOS",
     description:
-      "End-to-end iOS UX for a convenience store experience — research, flows, a design system in code, and AI-assisted SwiftUI development focused on certainty at the point of need.",
+      "End-to-end convenience-store iOS experience — research, flows, and a design system in SwiftUI, built for certainty at the point of need.",
     tags: ["iOS", "END-TO-END UX", "AI ASSISTANT"],
     href: "/work/quickstop-ios",
     role: "Product Designer + iOS Developer",
     timeline: "2025–2026",
   },
-  {
-    slug: "tawazon-redesign",
-    number: "04",
-    title: "Tawazon Redesign",
-    description:
-      "UX research and redesign of tawazon.com — heuristic evaluation, competitive analysis, information architecture, and an AI-assisted Next.js prototype.",
-    tags: ["UX REDESIGN", "DESIGN SYSTEM", "AI-ASSISTED DEVELOPMENT"],
-    href: "/work/tawazon-redesign",
-    role: "Sole UX Researcher & Designer",
-    timeline: "2026",
-  },
-  {
-    slug: "doc-providers",
-    number: "05",
-    title: "DOC – Health Services: The Providers",
-    description:
-      "Healthcare provider experience for DoctorOnCall — clarifying complex clinical workflows into an intuitive service surface for care teams.",
-    tags: ["CASE STUDY", "HEALTHCARE"],
-    href: "/work/doc-providers",
-    role: "Product Designer",
-    timeline: "Healthcare",
-  },
-  {
-    slug: "doc-users",
-    number: "06",
-    title: "DOC – Health Services: The Users",
-    description:
-      "Patient-facing health services experience — reducing friction in booking, care access, and follow-through for everyday users.",
-    tags: ["CASE STUDY", "HEALTHCARE"],
-    href: "/work/doc-users",
-    role: "Product Designer",
-    timeline: "Healthcare",
-  },
+  // {
+  //   slug: "tawazon-redesign",
+  //   number: "04",
+  //   title: "Tawazon Redesign",
+  //   description:
+  //     "UX research and redesign of tawazon.com — heuristic evaluation, competitive analysis, information architecture, and an AI-assisted Next.js prototype.",
+  //   tags: ["UX REDESIGN", "DESIGN SYSTEM", "AI-ASSISTED DEVELOPMENT"],
+  //   href: "/work/tawazon-redesign",
+  //   role: "Sole UX Researcher & Designer",
+  //   timeline: "2026",
+  // },
+  // {
+  //   slug: "doc-providers",
+  //   number: "05",
+  //   title: "DOC – Health Services: The Providers",
+  //   description:
+  //     "Healthcare provider experience for DoctorOnCall — clarifying complex clinical workflows into an intuitive service surface for care teams.",
+  //   tags: ["CASE STUDY", "HEALTHCARE"],
+  //   href: "/work/doc-providers",
+  //   role: "Product Designer",
+  //   timeline: "Healthcare",
+  // },
+  // {
+  //   slug: "doc-users",
+  //   number: "06",
+  //   title: "DOC – Health Services: The Users",
+  //   description:
+  //     "Patient-facing health services experience — reducing friction in booking, care access, and follow-through for everyday users.",
+  //   tags: ["CASE STUDY", "HEALTHCARE"],
+  //   href: "/work/doc-users",
+  //   role: "Product Designer",
+  //   timeline: "Healthcare",
+  // },
 ];
 
 export const testimonials: Testimonial[] = [

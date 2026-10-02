@@ -9,7 +9,9 @@ import { heroContent, siteLinks } from "@/data/portfolio";
 export function Hero() {
   return (
     <section aria-labelledby="hero-heading" className="border-b border-border">
-      <div className="lg:grid lg:min-h-[879px] lg:grid-cols-[minmax(0,768fr)_minmax(0,672fr)]">
+      <div className="mx-auto w-full min-[2400px]:w-1/2 lg:grid lg:min-h-[879px] lg:grid-cols-[minmax(0,768fr)_minmax(0,672fr)]">
+
+
         <div className="flex flex-col justify-between gap-8 px-6 pt-10 pb-14 lg:gap-10 lg:p-20">
           <div className="flex flex-col gap-4 lg:gap-6 pt-20">
             <p className="font-mono text-eyebrow font-medium text-accent lg:text-eyebrow-lg">
@@ -24,7 +26,7 @@ export function Hero() {
                 delay={80}
                 animateBy="words"
                 direction="bottom"
-                className="font-display text-display-hero font-black uppercase text-ink lg:text-display-hero-lg"
+                className="font-display text-display-hero font-medium text-ink lg:text-display-hero-lg"
               />
             </div>
           </div>

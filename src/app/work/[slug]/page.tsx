@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { MdmCaseStudy } from "@/components/case-studies/mdm-case-study";
+import { QuickstopCaseStudy } from "@/components/case-studies/quickstop-case-study";
 import { VestaCaseStudy } from "@/components/case-studies/vesta-case-study";
 import { Tag } from "@/components/tag";
 import { getProject, projects, siteLinks } from "@/data/portfolio";
@@ -41,6 +42,10 @@ export default async function WorkPage({ params }: WorkPageProps) {
 
   if (slug === "vesta") {
     return <VestaCaseStudy />;
+  }
+
+  if (slug === "quickstop-ios") {
+    return <QuickstopCaseStudy />;
   }
 
   return (

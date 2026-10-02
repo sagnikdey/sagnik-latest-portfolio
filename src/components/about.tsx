@@ -11,7 +11,7 @@ export function About() {
       aria-labelledby="about-heading"
       className="border-b border-border px-6 py-14 lg:px-20 lg:py-[120px]"
     >
-      <div className="flex flex-col gap-8 lg:flex-row lg:gap-20">
+      <div className="mx-auto flex w-full flex-col gap-8 lg:flex-row lg:gap-20 min-[2400px]:w-1/2">
         <FadeContent duration={800} threshold={0.15} className="lg:w-[400px] lg:shrink-0">
           <SectionHeading underline as="h2">
             <span id="about-heading">{aboutContent.title}</span>

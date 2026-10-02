@@ -41,20 +41,18 @@ export function ProjectCard({
         <h3>
           {project.title}
         </h3>
+        <p className="text-body text-ink-muted lg:text-body-lg">
+          {project.description}
+        </p>
         {isRich ? (
-          <>
-            <p className="text-body text-ink-muted lg:text-body-lg">
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-tag text-ink-muted uppercase lg:text-meta">
-              <span>
-                <span className="text-accent">Role</span> {project.role}
-              </span>
-              <span>
-                <span className="text-accent">Timeline</span> {project.timeline}
-              </span>
-            </div>
-          </>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-tag text-ink-muted uppercase lg:text-meta">
+            <span>
+              <span className="text-accent">Role</span> {project.role}
+            </span>
+            <span>
+              <span className="text-accent">Timeline</span> {project.timeline}
+            </span>
+          </div>
         ) : null}
       </div>
 

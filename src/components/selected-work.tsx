@@ -13,21 +13,25 @@ export function SelectedWork() {
       aria-labelledby="work-heading"
       className="border-b border-border px-6 py-14 lg:px-20 lg:py-[120px]"
     >
-      <FadeContent duration={800} threshold={0.15} className="mb-8 lg:mb-16">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <SectionHeading as="h2">
-            <span id="work-heading">Selected work</span>
+      <div className="mx-auto flex w-full flex-col gap-8 lg:flex-row lg:gap-20 min-[2400px]:w-1/2">
+        <FadeContent
+          duration={800}
+          threshold={0.15}
+          className="flex flex-col gap-4 lg:w-[400px] lg:shrink-0"
+        >
+          <SectionHeading underline as="h2">
+            <span id="work-heading">selected work</span>
           </SectionHeading>
-          <TextLink href={siteLinks.portfolioHref} className="self-start sm:self-auto">
+          <TextLink href={siteLinks.portfolioHref} className="self-start">
             View all
           </TextLink>
-        </div>
-      </FadeContent>
+        </FadeContent>
 
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-6">
-        {projects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
-        ))}
+        <div className="grid flex-1 grid-cols-1 gap-5 lg:gap-6">
+          {projects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -36,7 +36,7 @@ export default function RootLayout({
       lang="en"
       className={`${display.variable} ${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="relative min-h-screen bg-bg font-sans text-ink antialiased">
+      <body className="relative min-h-screen bg-bg font-sans text-ink antialiased ">
         <SiteBackground />
         <div className="relative z-10">
           <SiteNav />
