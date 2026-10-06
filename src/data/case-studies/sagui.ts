@@ -41,6 +41,15 @@ export const saguiSections: CaseStudySection[] = [
       "Most component libraries stop at static states. Teams then hand-roll transitions screen by screen, timings drift, dark mode breaks where someone hard-coded a colour, and AI coding tools — now writing a large share of UI — invent props that don't exist.",
     quote:
       "The goal: a system where the right choice is the easy one — for designers, developers, and the agents working alongside them.",
+    shots: [
+      {
+        src: "/images/sagui/docs-home.png",
+        alt: "The SagUI docs homepage: '69 components · open source' and the headline 'Interfaces that move with intent.' with Explore components and Give SagUI to your AI buttons",
+        caption: "The docs site — install from npm, or point an AI tool at the docs and let it build.",
+        width: 1440,
+        height: 1000,
+      },
+    ],
   },
   {
     id: "foundations",
@@ -63,6 +72,15 @@ export const saguiSections: CaseStudySection[] = [
       {
         title: "Motion as tokens",
         body: "Spring and ease presets plus duration tokens (instant → considered). Components pick a role, not a millisecond value.",
+      },
+    ],
+    shots: [
+      {
+        src: "/images/sagui/storybook.png",
+        alt: "Storybook's Colors foundation page showing semantic colour tokens such as --color-background, --color-primary and --color-destructive, with Foundations, Components and Charts in the sidebar",
+        caption: "Foundations in Storybook — components only reference semantic tokens.",
+        width: 1440,
+        height: 900,
       },
     ],
   },
@@ -126,6 +144,15 @@ export const saguiSections: CaseStudySection[] = [
         body: "Changesets drive a Release workflow that opens a version PR and publishes to npm. CI builds Storybook to GitHub Pages.",
       },
     ],
+    shots: [
+      {
+        src: "/images/sagui/docs-button.png",
+        alt: "The Button docs page: a live Preview and Code tab showing Continue, Save draft, Cancel, Skip and Delete buttons, followed by When to use and When not to use guidance",
+        caption: "Every component page opens on a live demo; the Code tab renders the same source.",
+        width: 1440,
+        height: 1000,
+      },
+    ],
   },
   {
     id: "ai",
@@ -156,6 +183,15 @@ export const saguiSections: CaseStudySection[] = [
       "SagUI was validated by building a full Sales Analytics dashboard entirely on it, installed as a packaged dependency outside the monorepo. That surfaced real gaps — bundling motion tokens for external apps, dark-theme rules dropped by the browser — which were fixed back in the system.",
     linkHref: "/work/sales-analytics",
     linkLabel: "Read the Sales Analytics case study →",
+    shots: [
+      {
+        src: "/images/sales-analytics/dashboard.png",
+        alt: "The Sales Analytics dashboard built on SagUI: KPI cards for revenue, units, margin and open alerts above a revenue trend chart",
+        caption: "Sales Analytics — AppShell, MetricCard and LineChart straight from SagUI.",
+        width: 1440,
+        height: 1000,
+      },
+    ],
   },
 ];
 

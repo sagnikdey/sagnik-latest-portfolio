@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { CaseStudySectionNav } from "@/components/case-study-section-nav";
@@ -7,7 +8,11 @@ import {
   PullStat,
 } from "@/components/case-study-layout";
 import { Tag } from "@/components/tag";
-import type { CaseStudyMeta, CaseStudyStat } from "@/data/case-studies/mdm";
+import type {
+  CaseStudyMeta,
+  CaseStudyShot,
+  CaseStudyStat,
+} from "@/data/case-studies/mdm";
 import { siteLinks } from "@/data/portfolio";
 
 export type CaseStudySection = {
@@ -18,6 +23,7 @@ export type CaseStudySection = {
   list?: string[];
   note?: string;
   quote?: string;
+  shots?: (CaseStudyShot & { width: number; height: number })[];
   linkHref?: string;
   linkLabel?: string;
 };
@@ -184,6 +190,24 @@ export function SectionedCaseStudy({
                   </ul>
                 </Surface>
               )}
+              {section.shots?.map((shot) => (
+                <figure
+                  key={shot.src}
+                  className="overflow-hidden rounded-lg border border-border bg-surface"
+                >
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={shot.width}
+                    height={shot.height}
+                    className="h-auto w-full"
+                    sizes="(max-width: 1023px) 100vw, 70vw"
+                  />
+                  <figcaption className="border-t border-border px-4 py-3 font-mono text-meta text-ink-muted">
+                    {shot.caption}
+                  </figcaption>
+                </figure>
+              ))}
               {section.note && <p className={bodyClass}>{section.note}</p>}
               {section.quote && (
                 <blockquote className="max-w-3xl border-l-2 border-accent pl-5 text-lede text-ink lg:text-lede-lg">

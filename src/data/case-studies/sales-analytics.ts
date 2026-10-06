@@ -59,6 +59,15 @@ export const salesAnalyticsSections: CaseStudySection[] = [
         body: "Every alert carries a recommended action the lead can accept, adjust, or assign in a couple of clicks.",
       },
     ],
+    shots: [
+      {
+        src: "/images/sales-analytics/dashboard.png",
+        alt: "Sales overview dashboard: store and date-range filters, KPI cards for revenue, units sold, gross margin and 30 open alerts, and a revenue trend comparing this period with the previous one",
+        caption: "Summary first — KPIs with period-over-period deltas, then the trend behind them.",
+        width: 1440,
+        height: 1000,
+      },
+    ],
   },
   {
     id: "ia",
@@ -71,6 +80,22 @@ export const salesAnalyticsSections: CaseStudySection[] = [
       { title: "Inventory", body: "Stock status across stores — out, low, healthy, over — with days of cover." },
       { title: "Alerts", body: "An inbox with status (open → acknowledged → actioned → resolved) and suggested actions." },
       { title: "Actions", body: "A tracker for reorders, transfers, markdowns, notifications and tasks — owner, due date, status." },
+    ],
+    shots: [
+      {
+        src: "/images/sales-analytics/products.png",
+        alt: "Products page with Highest selling, Lowest selling, Biggest movers and Category map tabs over a table of products with revenue, units, change, margin, cover and an Act button",
+        caption: "Products — best and worst sellers, with an action on every row.",
+        width: 1440,
+        height: 1000,
+      },
+      {
+        src: "/images/sales-analytics/stores.png",
+        alt: "Store comparison: ten progress-to-target gauges, with Lubbock Tech Park in red at 64% while the others sit between 70% and 75%",
+        caption: "Stores — the declining store stands out against target at a glance.",
+        width: 1440,
+        height: 1000,
+      },
     ],
   },
   {
@@ -86,6 +111,15 @@ export const salesAnalyticsSections: CaseStudySection[] = [
       { title: "Surge → Chain-wide order", body: "Info. Suggests an order covering two weeks of the new demand so a hot product doesn't sell out." },
       { title: "Store decline → Notify", body: "Warning. Asks the store manager for a recovery plan this week." },
     ],
+    shots: [
+      {
+        src: "/images/sales-analytics/alerts.png",
+        alt: "Alert inbox with Needs attention, Action taken and Resolved tabs, severity and type filters, and a table of critical stockout and low-stock alerts each with a Review button",
+        caption: "The alert inbox — sorted by severity, filterable by type, one click to review.",
+        width: 1440,
+        height: 1000,
+      },
+    ],
   },
   {
     id: "data",
@@ -99,6 +133,15 @@ export const salesAnalyticsSections: CaseStudySection[] = [
       "An airport store that is consistently the busiest",
     ],
     note: "Planting these scenarios meant every screen had a real problem to surface, which made it possible to judge whether the design actually led the user to it.",
+    shots: [
+      {
+        src: "/images/sales-analytics/inventory.png",
+        alt: "Stock health page: KPI cards for 2 out of stock, 14 below reorder point, 12 overstocked and 216 healthy, above a table where the energy drink is out of stock at two stores with Reorder buttons",
+        caption: "Inventory — the planted stockouts and overstock show up exactly where expected.",
+        width: 1440,
+        height: 1000,
+      },
+    ],
   },
   {
     id: "system",
