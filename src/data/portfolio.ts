@@ -7,6 +7,8 @@ export type Project = {
   href: string;
   role: string;
   timeline: string;
+  liveUrl?: string;
+  liveLabel?: string;
 };
 
 export type Testimonial = {
@@ -70,6 +72,8 @@ export const projects: Project[] = [
     href: "/work/sagui",
     role: "Design Systems Lead & Design-Engineer",
     timeline: "2026",
+    liveUrl: "https://sagui-docs.vercel.app/",
+    liveLabel: "Live docs",
   },
   {
     slug: "sales-analytics",
@@ -81,6 +85,8 @@ export const projects: Project[] = [
     href: "/work/sales-analytics",
     role: "Product Designer & Design-Engineer",
     timeline: "2026",
+    liveUrl: "https://sales-analytics-delta-one.vercel.app/",
+    liveLabel: "Live demo",
   },
   {
     

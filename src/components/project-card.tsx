@@ -20,11 +20,9 @@ export function ProjectCard({
   const isRich = variant === "rich";
 
   return (
-    <Link
-      href={project.href}
-      aria-label={`Open case study: ${project.title}`}
+    <article
       className={cn(
-        "group flex flex-col justify-between rounded-lg border border-border bg-surface p-6 transition-colors hover:border-ink-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-bg lg:p-10",
+        "group relative flex flex-col justify-between rounded-lg border border-border bg-surface p-6 transition-colors hover:border-ink-muted/40 has-[a[data-card-link]:focus-visible]:ring-2 has-[a[data-card-link]:focus-visible]:ring-ring has-[a[data-card-link]:focus-visible]:ring-offset-2 has-[a[data-card-link]:focus-visible]:ring-offset-bg lg:p-10",
         isRich ? "min-h-[280px] gap-8 lg:min-h-[340px]" : "min-h-[196px] lg:min-h-[300px] lg:flex-row lg:items-end lg:justify-between",
         className
       )}
@@ -39,7 +37,15 @@ export function ProjectCard({
           ))}
         </div>
         <h3>
-          {project.title}
+          {/* Stretched link: its ::after covers the card so the whole card opens the case study. */}
+          <Link
+            href={project.href}
+            data-card-link
+            aria-label={`Open case study: ${project.title}`}
+            className="after:absolute after:inset-0 after:rounded-lg after:content-[''] focus-visible:outline-none"
+          >
+            {project.title}
+          </Link>
         </h3>
         <p className="text-body text-ink-muted lg:text-body-lg">
           {project.description}
@@ -62,6 +68,17 @@ export function ProjectCard({
           isRich ? "mt-auto" : "mt-8 lg:mt-0 lg:shrink-0"
         )}
       >
+        {project.liveUrl ? (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${project.liveLabel ?? "Live site"} for ${project.title} (opens in a new tab)`}
+            className="relative z-10 font-mono text-meta font-bold text-ink uppercase underline decoration-accent underline-offset-4 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            {project.liveLabel ?? "Live site"} ↗
+          </a>
+        ) : null}
         <span className="font-mono text-meta text-ink-muted uppercase lg:hidden">
           View case study
         </span>
@@ -81,6 +98,6 @@ export function ProjectCard({
           />
         </span>
       </div>
-    </Link>
+    </article>
   );
 }

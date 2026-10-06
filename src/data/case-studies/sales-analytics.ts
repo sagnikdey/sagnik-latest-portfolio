@@ -16,6 +16,7 @@ export const salesAnalyticsCaseStudyMeta: CaseStudyMeta = {
 };
 
 export const salesAnalyticsLinks = [
+  { label: "Live demo", href: "https://sales-analytics-delta-one.vercel.app/" },
   { label: "SagUI design system", href: "/work/sagui" },
 ];
 
