@@ -99,6 +99,8 @@ export const projects: Project[] = [
     href: "/work/mdm",
     role: "Product Designer & Design-Engineer",
     timeline: "2025–2026",
+    liveUrl: "https://design-system-three-brown.vercel.app/",
+    liveLabel: "Live UI kit",
   },
   {
     slug: "vesta",
