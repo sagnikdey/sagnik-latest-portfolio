@@ -16,7 +16,7 @@ export type Testimonial = {
 };
 
 export const siteLinks = {
-  linkedin: "https://www.linkedin.com/in/sagnikdey/",
+  linkedin: "https://www.linkedin.com/in/deysagnik/",
   resume: "/resume.pdf",
   portfolioLabel: "PORTFOLIO",
   portfolioHref: "/portfolio",
@@ -61,6 +61,29 @@ export const aboutContent = {
 
 export const projects: Project[] = [
   {
+    slug: "sagui",
+    number: "04",
+    title: "SagUI",
+    description:
+      "A React design system with motion built in — tokens, 60+ components, Storybook, docs that can't drift, and an MCP server so AI tools build with the system.",
+    tags: ["DESIGN SYSTEM", "DESIGN TOKENS", "MOTION", "AI-READY"],
+    href: "/work/sagui",
+    role: "Design Systems Lead & Design-Engineer",
+    timeline: "2026",
+  },
+  {
+    slug: "sales-analytics",
+    number: "05",
+    title: "Sales Analytics",
+    description:
+      "A 10-store sales dashboard that turns alerts into tracked actions — best and worst sellers, store comparisons, and inventory risk, built entirely on SagUI.",
+    tags: ["DASHBOARD", "DATA VISUALIZATION", "B2B", "DESIGN SYSTEM"],
+    href: "/work/sales-analytics",
+    role: "Product Designer & Design-Engineer",
+    timeline: "2026",
+  },
+  {
+    
     slug: "mdm",
     number: "01",
     title: "MDM Platform",
@@ -93,6 +116,8 @@ export const projects: Project[] = [
     role: "Product Designer + iOS Developer",
     timeline: "2025–2026",
   },
+  
+
   // {
   //   slug: "tawazon-redesign",
   //   number: "04",

@@ -4,8 +4,24 @@ import { notFound } from "next/navigation";
 
 import { MdmCaseStudy } from "@/components/case-studies/mdm-case-study";
 import { QuickstopCaseStudy } from "@/components/case-studies/quickstop-case-study";
+import { SectionedCaseStudy } from "@/components/case-studies/sectioned-case-study";
 import { VestaCaseStudy } from "@/components/case-studies/vesta-case-study";
 import { Tag } from "@/components/tag";
+import {
+  salesAnalyticsCaseStudyMeta,
+  salesAnalyticsLinks,
+  salesAnalyticsOverview,
+  salesAnalyticsPullStats,
+  salesAnalyticsSections,
+} from "@/data/case-studies/sales-analytics";
+import {
+  saguiCaseStudyMeta,
+  saguiCredits,
+  saguiLinks,
+  saguiOverview,
+  saguiPullStats,
+  saguiSections,
+} from "@/data/case-studies/sagui";
 import { getProject, projects, siteLinks } from "@/data/portfolio";
 
 type WorkPageProps = {
@@ -46,6 +62,31 @@ export default async function WorkPage({ params }: WorkPageProps) {
 
   if (slug === "quickstop-ios") {
     return <QuickstopCaseStudy />;
+  }
+
+  if (slug === "sagui") {
+    return (
+      <SectionedCaseStudy
+        meta={saguiCaseStudyMeta}
+        stats={saguiPullStats}
+        overview={saguiOverview}
+        sections={saguiSections}
+        links={saguiLinks}
+        credits={saguiCredits}
+      />
+    );
+  }
+
+  if (slug === "sales-analytics") {
+    return (
+      <SectionedCaseStudy
+        meta={salesAnalyticsCaseStudyMeta}
+        stats={salesAnalyticsPullStats}
+        overview={salesAnalyticsOverview}
+        sections={salesAnalyticsSections}
+        links={salesAnalyticsLinks}
+      />
+    );
   }
 
   return (
