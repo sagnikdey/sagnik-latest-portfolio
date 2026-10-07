@@ -59,6 +59,11 @@ const bodyClass = "max-w-3xl text-body text-ink-muted lg:text-body-lg";
 const linkClass =
   "w-fit font-mono text-link font-bold text-ink uppercase transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
+const ctaBaseClass =
+  "inline-flex min-h-11 items-center gap-2 rounded-lg px-5 py-2.5 font-sans text-body font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-bg";
+const primaryCtaClass = `${ctaBaseClass} bg-accent text-white hover:opacity-90`;
+const secondaryCtaClass = `${ctaBaseClass} border border-border bg-surface text-ink hover:border-accent hover:text-accent`;
+
 function SmartLink({ href, className, children }: { href: string; className: string; children: React.ReactNode }) {
   if (href.startsWith("/")) {
     return (
@@ -132,10 +137,14 @@ export function SectionedCaseStudy({
               ))}
             </div>
             {links.length > 0 && (
-              <div className="flex flex-wrap gap-x-6 gap-y-2">
-                {links.map((link) => (
-                  <SmartLink key={link.href} href={link.href} className={linkClass}>
-                    {link.label} ↗
+              <div className="flex flex-wrap gap-3">
+                {links.map((link, index) => (
+                  <SmartLink
+                    key={link.href}
+                    href={link.href}
+                    className={index === 0 ? primaryCtaClass : secondaryCtaClass}
+                  >
+                    {link.label} {link.href.startsWith("/") ? "→" : "↗"}
                   </SmartLink>
                 ))}
               </div>
