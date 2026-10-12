@@ -6,6 +6,7 @@ import { MdmCaseStudy } from "@/components/case-studies/mdm-case-study";
 import { QuickstopCaseStudy } from "@/components/case-studies/quickstop-case-study";
 import { SectionedCaseStudy } from "@/components/case-studies/sectioned-case-study";
 import { VestaCaseStudy } from "@/components/case-studies/vesta-case-study";
+import { CaseStudyMotion } from "@/components/scroll/case-study-motion";
 import { Tag } from "@/components/tag";
 import {
   salesAnalyticsCaseStudyMeta,
@@ -44,7 +45,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function WorkPage({ params }: WorkPageProps) {
+async function WorkPageContent({ params }: WorkPageProps) {
   const { slug } = await params;
   const project = getProject(slug);
 
@@ -121,5 +122,13 @@ export default async function WorkPage({ params }: WorkPageProps) {
         ← Back to portfolio
       </Link>
     </section>
+  );
+}
+
+export default function WorkPage(props: WorkPageProps) {
+  return (
+    <CaseStudyMotion>
+      <WorkPageContent {...props} />
+    </CaseStudyMotion>
   );
 }

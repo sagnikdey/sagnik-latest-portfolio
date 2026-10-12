@@ -53,7 +53,7 @@ type PullStatProps = {
 export function PullStat({ value, caption }: PullStatProps) {
   return (
     <div className="flex flex-col gap-3 rounded-lg border border-border bg-surface p-6 lg:p-8">
-      <p className="font-display text-display-section font-extrabold text-accent lg:text-display-section-lg">
+      <p data-count className="font-display text-display-section font-extrabold text-accent lg:text-display-section-lg">
         {value}
       </p>
       <p className="font-mono text-tag text-ink-muted uppercase lg:text-meta">{caption}</p>
