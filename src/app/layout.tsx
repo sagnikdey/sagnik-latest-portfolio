@@ -4,6 +4,7 @@ import { Big_Shoulders } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 
+import { SmoothScroll } from "@/components/scroll/smooth-scroll";
 import { SiteBackground } from "@/components/site-background";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
@@ -38,6 +39,7 @@ export default function RootLayout({
       className={`${display.variable} ${GeistSans.variable} ${GeistMono.variable}`}
     >
       <body className="relative min-h-screen bg-bg font-sans text-ink antialiased ">
+        <SmoothScroll />
         <SiteBackground />
         <div className="relative z-10">
           <SiteNav />

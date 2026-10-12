@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import BlurText from "@/components/bits/blur-text";
+import { Parallax } from "@/components/scroll/parallax";
 import { TextLink } from "@/components/text-link";
 import { heroContent, siteLinks } from "@/data/portfolio";
 
@@ -12,7 +13,7 @@ export function Hero() {
       <div className="mx-auto w-full min-[2400px]:w-1/2 lg:grid lg:min-h-[879px] lg:grid-cols-[minmax(0,768fr)_minmax(0,672fr)]">
 
 
-        <div className="flex flex-col justify-between gap-8 px-6 pt-10 pb-14 lg:gap-10 lg:p-20">
+        <Parallax rate={-0.12} className="flex flex-col justify-between gap-8 px-6 pt-10 pb-14 lg:gap-10 lg:p-20">
           <div className="flex flex-col gap-4 lg:gap-6 pt-20">
             <p className="font-mono text-eyebrow font-medium text-accent lg:text-eyebrow-lg">
               {heroContent.eyebrow}
@@ -58,9 +59,10 @@ export function Hero() {
               <TextLink href={siteLinks.resume}>Resume</TextLink>
             </div>
           </div>
-        </div>
+        </Parallax>
 
         <div className="relative hidden overflow-hidden lg:block">
+          <Parallax rate={0.18} scale={[1.08, 1.16]} className="absolute inset-0">
           <Image
             src="/images/hero-portrait.jpg"
             alt="Portrait of Sagnik Dey"
@@ -69,6 +71,7 @@ export function Hero() {
             sizes="(min-width: 1024px) 47vw, 0px"
             priority
           />
+          </Parallax>
         </div>
       </div>
     </section>

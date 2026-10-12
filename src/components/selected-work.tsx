@@ -1,6 +1,8 @@
 "use client";
 
 import FadeContent from "@/components/bits/fade-content";
+import { ClipReveal } from "@/components/scroll/clip-reveal";
+import { KineticText } from "@/components/scroll/kinetic-text";
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeading } from "@/components/section-heading";
 import { TextLink } from "@/components/text-link";
@@ -20,18 +22,18 @@ export function SelectedWork() {
           className="flex flex-col gap-4 lg:w-[400px] lg:shrink-0"
         >
           <SectionHeading underline as="h2">
-            <span id="work-heading">selected work</span>
+            <span id="work-heading"><KineticText text="selected work" /></span>
           </SectionHeading>
           <TextLink href={siteLinks.portfolioHref} className="self-start">
             View all
           </TextLink>
         </FadeContent>
 
-        <div className="grid flex-1 grid-cols-1 gap-5 lg:gap-6">
+        <ClipReveal className="grid flex-1 grid-cols-1 gap-5 lg:gap-6">
           {projects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
-        </div>
+        </ClipReveal>
       </div>
     </section>
   );
