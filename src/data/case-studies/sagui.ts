@@ -6,13 +6,13 @@ export const saguiCaseStudyMeta: CaseStudyMeta = {
   eyebrow: "Case study · Design system · React component library",
   title: "SagUI",
   lede:
-    "A React design system with motion built in — tokens, 60+ components, Storybook, a docs site, and an MCP server so AI tools build with the system instead of around it.",
+    "A design system designed in Paper and shipped in React — one token set shared by the canvas and the code, 69 motion-ready components, Storybook, a docs site, and an MCP server so AI tools build with the system instead of around it.",
   role: "Design Systems Lead & Design-Engineer",
   status: "v0.1 — in active development",
-  stack: "React · Radix · CVA · Motion · Tailwind v4 · Storybook 10 · Next.js · Changesets",
+  stack: "Paper · React · Radix · CVA · Motion · Tailwind v4 · Storybook 10 · Next.js · Changesets",
   timeline: "2026",
   repoUrl: "https://github.com/sagnikdey/sagui",
-  tags: ["DESIGN SYSTEM", "DESIGN TOKENS", "MOTION", "ACCESSIBILITY", "AI-READY"],
+  tags: ["DESIGN SYSTEM", "DESIGN TOKENS", "DESIGN-TO-CODE", "MOTION", "ACCESSIBILITY", "AI-READY"],
 };
 
 export const saguiLinks = [
@@ -24,13 +24,14 @@ export const saguiLinks = [
 
 export const saguiPullStats: CaseStudyStat[] = [
   { value: "69", caption: "Components across inputs, overlays, data and charts" },
-  { value: "12", caption: "Chart types driven by a four-colour token palette" },
+  { value: "10", caption: "Paper pages — foundations to data display, in light and dark" },
   { value: "2", caption: "Themes — every component checked for a11y in both" },
   { value: "1", caption: "MCP endpoint so AI agents look up real props" },
 ];
 
 export const saguiOverview = [
-  "SagUI is a design system I built as a single npm-workspaces monorepo: @sagui/tokens for semantic colour, type, radius, elevation and motion; @sagui/ui for the React components; a Storybook deployed to GitHub Pages; and a Next.js docs site on Vercel.",
+  "SagUI starts on the canvas. The system is designed in a Paper file — foundations, components and patterns across ten pages — and that file reads from the same tokens the code uses: every colour is an OKLCH value with a light and a dark pair, and type, spacing, radius and shadow are named exactly as they are in CSS.",
+  "The code side is a single npm-workspaces monorepo: @sagui/tokens for semantic colour, type, radius, elevation and motion; @sagui/ui for the React components; a Storybook deployed to GitHub Pages; and a Next.js docs site on Vercel.",
   "Its defining idea is that motion is part of the system, not decoration added per screen. Springs, durations and easing are tokens, every component ships with its motion already tuned, and all of it respects prefers-reduced-motion.",
 ];
 
@@ -53,22 +54,57 @@ export const saguiSections: CaseStudySection[] = [
     ],
   },
   {
+    id: "design",
+    label: "Designed in Paper",
+    intro:
+      "Paper renders real HTML and CSS, so the design file isn't a picture of the system — it's built from the system's own variables. A component on the canvas and the same component in React resolve to the same --color-*, --radius-* and --spacing-* tokens, which removes the usual translation step between design and build.",
+    cards: [
+      {
+        title: "One token set, two surfaces",
+        body: "The ~130 tokens in Paper — colour, type scale, weights, tracking, leading, spacing, radius, breakpoints, containers — mirror @sagui/tokens name for name.",
+      },
+      {
+        title: "Organised like the library",
+        body: "Ten pages map to component families: Foundations, Buttons, Inputs, Selection controls, Navigation, Messages, Cards, Data display and Icons, plus a cover.",
+      },
+      {
+        title: "Light and dark side by side",
+        body: "Every colour role has a paired -dark token, and the foundations page lays both themes out together so contrast is checked by eye before code.",
+      },
+      {
+        title: "One icon language",
+        body: "Icons were standardised on Tabler outline at a consistent stroke, swapped in across the file so the canvas matches what ships in React.",
+      },
+    ],
+    quote:
+      "If the design file and the code disagree, one of them is a bug — so they share a vocabulary from the first token.",
+    shots: [
+      {
+        src: "/images/sagui/paper-banner.png",
+        alt: "The SagUI cover board in Paper",
+        caption: "The cover of the SagUI Paper file — ten pages, one token set.",
+        width: 2880,
+        height: 1800,
+      },
+    ],
+  },
+  {
     id: "foundations",
     label: "Foundations & tokens",
     intro:
-      "Everything starts in @sagui/tokens. Components never reference raw values; they reference roles, so a theme swap or a rebrand is a token change.",
+      "Foundations were laid out first in Paper — Color, Color · Dark, Typography, Radius, Spacing and Shadows artboards — then codified in @sagui/tokens. Components never reference raw values; they reference roles, so a theme swap or a rebrand is a token change in both places.",
     cards: [
       {
-        title: "Semantic colour, light + dark",
-        body: "Role-based colours (surface, ink, border-strong, success, warning, danger) with dark mode toggled by a single data-theme attribute on <html>.",
+        title: "Semantic colour in OKLCH",
+        body: "Role-based colours (background, surface, muted, border-strong, primary, success, warning, destructive, four chart hues) defined in OKLCH for perceptually even steps, with dark mode toggled by a data-theme attribute on <html>.",
       },
       {
         title: "Type scale with roles",
-        body: "An explicit type scale with tracking on the large steps, exposed as type-* role utilities so headings and labels stay consistent.",
+        body: "Inter and JetBrains Mono on a 12–128px scale, with tracking and leading tokens, exposed as type-* role utilities so headings and labels stay consistent.",
       },
       {
         title: "Radius & elevation roles",
-        body: "Radius roles (control, container, overlay, pill) and five elevation levels, with theme-aware shadows that get denser in dark mode.",
+        body: "A 4–28px radius scale aliased into roles (control, container, overlay, pill), a 2px-based spacing scale, and five elevation levels with theme-aware shadows.",
       },
       {
         title: "Motion as tokens",
@@ -76,6 +112,20 @@ export const saguiSections: CaseStudySection[] = [
       },
     ],
     shots: [
+      {
+        src: "/images/sagui/paper-color.png",
+        alt: "Paper Color foundations board: semantic colour roles as OKLCH swatches in the light theme",
+        caption: "Color foundations in Paper — semantic roles, light theme.",
+        width: 2880,
+        height: 2040,
+      },
+      {
+        src: "/images/sagui/paper-color-dark.png",
+        alt: "Paper Color · Dark board: the same semantic colour roles with their dark-theme values",
+        caption: "The same roles in dark — every token has a paired -dark value.",
+        width: 2880,
+        height: 2040,
+      },
       {
         src: "/images/sagui/storybook.png",
         alt: "Storybook's Colors foundation page showing semantic colour tokens such as --color-background, --color-primary and --color-destructive, with Foundations, Components and Charts in the sidebar",
@@ -89,7 +139,7 @@ export const saguiSections: CaseStudySection[] = [
     id: "components",
     label: "Component library",
     intro:
-      "Components are built on Radix primitives for behaviour and accessibility, CVA for variants, Motion for animation, and Tailwind v4 for styling. They were shipped in families so each set shares patterns.",
+      "Each family was drawn in Paper first — variants, sizes and states on one page — then built on Radix primitives for behaviour and accessibility, CVA for variants, Motion for animation, and Tailwind v4 for styling. Designing in families meant each set shares patterns before a line of code.",
     cards: [
       {
         title: "Buttons",
@@ -114,6 +164,15 @@ export const saguiSections: CaseStudySection[] = [
       {
         title: "Text & motion effects",
         body: "TextReveal, InViewTitle, TextMorph and TextShimmer for considered, reduced-motion-safe emphasis.",
+      },
+    ],
+    shots: [
+      {
+        src: "/images/sagui/paper-buttons.png",
+        alt: "Paper Buttons page showing button variants, sizes and states",
+        caption: "The Buttons page in Paper — variants, sizes and states drawn before they were built.",
+        width: 2880,
+        height: 1712,
       },
     ],
   },
