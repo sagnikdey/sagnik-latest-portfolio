@@ -18,6 +18,7 @@ export const saguiCaseStudyMeta: CaseStudyMeta = {
 export const saguiLinks = [
   { label: "Live docs site", href: "https://sagui-docs.vercel.app/" },
   { label: "Storybook", href: "https://sagnikdey.github.io/sagui/" },
+  { label: "Paper design file", href: "https://app.paper.design/file/01M4KQXQQ2FAX0HCCQ94XBA216/p-1-0" },
   { label: "GitHub", href: "https://github.com/sagnikdey/sagui" },
 ];
 
